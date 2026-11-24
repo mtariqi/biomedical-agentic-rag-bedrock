@@ -1,8 +1,8 @@
 # Biomedical Agentic RAG System for Vaccine & Drug Discovery Intelligence
 
-Sanofi-targeted portfolio project demonstrating an LLM-powered biomedical intelligence platform for drug discovery, vaccine R&D, clinical research, and translational science.
+A portfolio project demonstrating an LLM-powered biomedical intelligence platform for drug discovery, vaccine R&D, clinical research, and translational science.
 
-## Why this project fits Sanofi Digital R&D
+## Why this project fits Digital R&D
 
 This project simulates an agentic AI system that decomposes a scientific question into retrieval, evidence synthesis, entity extraction, hypothesis generation, and evaluation. It uses LangChain/LangGraph for agent planning and tool orchestration, Amazon Bedrock for managed foundation-model access, PubMed/NCBI for biomedical literature retrieval, FAISS or Bedrock Knowledge Bases for vector retrieval, and Airflow/Snakemake for reproducible workflow execution.
 
