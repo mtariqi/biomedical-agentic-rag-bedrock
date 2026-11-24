@@ -1,0 +1,13 @@
+configfile: "workflows/config.yaml"
+
+QUESTION = config.get("question", "What evidence supports RTK and non-RTK kinase redundancy in breast cancer resistance?")
+
+rule all:
+    input:
+        "data/processed/rag_evaluations.jsonl"
+
+rule run_agentic_rag:
+    output:
+        "data/processed/rag_evaluations.jsonl"
+    shell:
+        "python -m app.main"
