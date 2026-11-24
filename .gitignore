@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# Credentials and secrets
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+credentials
+
+# Data and embeddings
+data/raw/*
+data/processed/*
+data/vector_store/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/vector_store/.gitkeep
+
+# Logs and outputs
+logs/
+mlruns/
+mlartifacts/
+airflow.db
+airflow.cfg
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS and IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Reports: ignore generated artifacts
+reports/figures/*
+reports/tables/*
+reports/evaluation/*
+!reports/figures/.gitkeep
+!reports/tables/.gitkeep
+!reports/evaluation/.gitkeep
