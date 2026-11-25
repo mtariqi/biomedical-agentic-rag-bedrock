@@ -80,9 +80,13 @@ def extract_relationship_candidates(report: dict) -> dict:
         cues = [name for name, patterns in CUES.items() if _matched(sentence, patterns)]
         if len(labels) < 2 or not cues:
             continue
-        # Avoid inventing directional triples. Candidate is an unordered pair.
+        # Require at least one concrete molecular/drug mention. Phenotype-to-
+        # phenotype pairs only restate abstract labels and are not actionable.
+        # Multiple cues for one pair are retained for reviewer transparency.
         for i, (category_a, entity_a) in enumerate(labels):
             for category_b, entity_b in labels[i + 1:]:
+                if category_a == category_b == "phenotype":
+                    continue
                 if category_a == category_b and entity_a == entity_b:
                     continue
                 for cue in cues:
@@ -113,6 +117,7 @@ def extract_relationship_candidates(report: dict) -> dict:
             "Regex predicate cues may be negated, speculative, or unrelated to the paired entities",
             "Entity pairs are unordered; no subject-object direction or causal relation is asserted",
             "Sentence-level context cues do not verify study design or experimental model",
+            "Phenotype-to-phenotype pairs are excluded; other false-positive co-mentions remain possible",
             "Manual adjudication and full-text assessment are required",
         ],
     }
