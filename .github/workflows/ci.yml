@@ -17,4 +17,4 @@ jobs:
       - name: Run tests
         env:
           USE_FAKE_LLM: "true"
-        run: pytest -q
+        run: python -m pytest -q
