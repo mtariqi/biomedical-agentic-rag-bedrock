@@ -51,3 +51,6 @@ reports/evaluation/*
 !reports/figures/.gitkeep
 !reports/tables/.gitkeep
 !reports/evaluation/.gitkeep
+
+# Snakemake state
+.snakemake/
