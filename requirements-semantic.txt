@@ -1,0 +1,3 @@
+# Optional real semantic retrieval dependencies; install only for Phase 4.
+# Existing core requirements already include numpy via faiss-cpu.
+sentence-transformers>=3.0,<6
